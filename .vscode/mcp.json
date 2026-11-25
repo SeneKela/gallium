@@ -1,0 +1,5 @@
+{
+  "servers": {
+    "gallium": { "type": "stdio", "command": "node", "args": ["${workspaceFolder}/scripts/mcp-server.mjs"] }
+  }
+}

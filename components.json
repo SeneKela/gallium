@@ -1,0 +1,168 @@
+{
+  "system": "Gallium",
+  "version": "3.1.0",
+  "stylesheet": "gallium.css",
+  "rootClass": "cf",
+  "themes": ["white", "g100"],
+  "scripts": { "resize": "cf-resize.js", "icons": "icons/cf-icon.js" },
+  "components": [
+    {
+      "name": "button", "class": "cf-btn", "section": "6",
+      "purpose": "Triggers an immediate action.",
+      "use": ["submit", "confirm", "create", "run an operation"],
+      "avoid": { "navigation": "link", "binary setting": "toggle", "choice between views": "segmented" },
+      "modifiers": {
+        "kind": ["(primary)", "is-secondary", "is-tertiary", "is-ghost"],
+        "tone": ["is-danger"],
+        "size": ["is-xs (24)", "(sm 32)", "is-md (40)", "is-lg (48)"],
+        "shape": ["is-icon", "is-split", "is-block"]
+      },
+      "states": ["disabled", "aria-pressed", "aria-expanded", "aria-busy"],
+      "rules": ["button-hierarchy", "split-button-hugs", "icon-a11y", "state-from-aria"],
+      "example": "<button type=\"button\" class=\"cf-btn\"><span>Save</span></button>",
+      "examples": {
+        "trailing icon": "<button type=\"button\" class=\"cf-btn\"><span>Continue</span><svg><use href=\"#icon--arrow--right\"/></svg></button>",
+        "icon only": "<button type=\"button\" class=\"cf-btn is-ghost is-icon\" aria-label=\"Delete\"><svg><use href=\"#icon--trash-can\"/></svg></button>",
+        "split (menu button)": "<button type=\"button\" class=\"cf-btn is-split\" aria-haspopup=\"menu\" aria-expanded=\"false\"><span>Add driver</span><svg class=\"cf-chev\"><use href=\"#icon--chevron--down\"/></svg></button>"
+      }
+    },
+    {
+      "name": "button-set", "class": "cf-btn-set", "section": "6",
+      "purpose": "Groups related buttons. Secondary left of primary.",
+      "modifiers": { "align": ["is-end"] },
+      "example": "<div class=\"cf-btn-set is-end\"><button type=\"button\" class=\"cf-btn is-secondary\"><span>Cancel</span></button><button type=\"button\" class=\"cf-btn\"><span>Save</span></button></div>"
+    },
+    {
+      "name": "link", "class": "cf-link", "section": "5",
+      "purpose": "Navigates to another page or anchor.",
+      "avoid": { "action": "button" },
+      "example": "<a class=\"cf-link\" href=\"#results\">View results</a>"
+    },
+    {
+      "name": "segmented", "class": "cf-seg", "section": "7",
+      "purpose": "Mutually exclusive choice between 2–4 options or views.",
+      "modifiers": { "size": ["is-xs"], "layout": ["is-block"] },
+      "states": ["aria-pressed (views)", "aria-checked with role=radio (values)"],
+      "example": "<div class=\"cf-seg\" role=\"group\" aria-label=\"Screens\"><button type=\"button\" aria-pressed=\"true\">Build</button><button type=\"button\" aria-pressed=\"false\">Results</button></div>"
+    },
+    {
+      "name": "field", "class": "cf-field", "section": "8",
+      "purpose": "Label + control + helper/error in forms (modal, settings). Not used in the inspector.",
+      "children": ["cf-label", "cf-input | cf-select | cf-textarea", "cf-helper | cf-error-text"],
+      "avoid": { "inspector field": "prop" },
+      "example": "<div class=\"cf-field\"><label class=\"cf-label\" for=\"c\">Client</label><input class=\"cf-input\" id=\"c\"></div>"
+    },
+    { "name": "input", "class": "cf-input", "section": "8", "purpose": "Filled text input, 32px.", "modifiers": { "size": ["is-md", "is-lg"], "numeric": ["is-num"] }, "states": ["aria-invalid"], "example": "<input class=\"cf-input\" aria-label=\"Version name\">" },
+    { "name": "select", "class": "cf-select", "section": "8", "purpose": "Filled native select, 32px.", "example": "<select class=\"cf-select\" aria-label=\"Cost type\"><option>One-time</option></select>" },
+    { "name": "textarea", "class": "cf-textarea", "section": "8", "purpose": "Multi-line text. Resize only with .cf-resize.", "example": "<div class=\"cf-resizable\" data-cf-resizable=\"y\"><textarea class=\"cf-textarea\" data-cf-resize-target></textarea><button type=\"button\" class=\"cf-resize is-se\" aria-label=\"Resize text area\"></button></div>" },
+    { "name": "toggle", "class": "cf-toggle", "section": "8", "purpose": "Binary setting that applies immediately.", "modifiers": { "layout": ["is-between"] }, "example": "<label class=\"cf-toggle\"><input type=\"checkbox\" role=\"switch\"><span>Client safe mode</span></label>" },
+    { "name": "checkbox", "class": "cf-check", "section": "8", "purpose": "Independent multiple selection.", "example": "<label class=\"cf-check\"><input type=\"checkbox\"><span>Include costs</span></label>" },
+    { "name": "stepper", "class": "cf-stepper", "section": "9", "purpose": "Small numeric increments.", "example": "<span class=\"cf-stepper\"><button type=\"button\" aria-label=\"Decrease\"><svg class=\"cf-icon\"><use href=\"#icon--subtract\"/></svg></button><input type=\"number\" value=\"80\" aria-label=\"Value\"><button type=\"button\" aria-label=\"Increase\"><svg class=\"cf-icon\"><use href=\"#icon--add\"/></svg></button></span>" },
+    { "name": "slider", "class": "cf-slider", "section": "9", "purpose": "Continuous range value. Set --_p to the percentage.", "example": "<input type=\"range\" class=\"cf-slider\" min=\"0\" max=\"100\" value=\"80\" style=\"--_p:80%\" aria-label=\"Realisation\">" },
+    {
+      "name": "edit", "class": "cf-edit", "section": "9",
+      "purpose": "The only borderless edit-in-place field: inspector values, editable table cells, titles, notes.",
+      "modifiers": { "numeric": ["is-num"], "title": ["is-title", "is-title-sm"] },
+      "example": "<input class=\"cf-edit is-title-sm\" value=\"Time saved\" aria-label=\"Driver name\">"
+    },
+    {
+      "name": "props", "class": "cf-props", "section": "9",
+      "purpose": "Read or edit one object's fields (Figma-style inspector).",
+      "children": ["cf-prop > cf-prop-l + (cf-edit | cf-prop-o)"],
+      "modifiers": { "row": ["is-stacked (long text)"] },
+      "replaces": ["inspector data", "data list", "key/value list"],
+      "example": "<div class=\"cf-props\"><div class=\"cf-prop\"><label class=\"cf-prop-l\" for=\"o\"><span>Owner</span></label><input class=\"cf-edit\" id=\"o\" value=\"CFO\"></div><div class=\"cf-prop\"><span class=\"cf-prop-l\"><span>People</span></span><span class=\"cf-prop-o cf-num\">120</span></div></div>"
+    },
+    { "name": "tag", "class": "cf-tag", "section": "10", "purpose": "Read-only status.", "modifiers": { "tone": ["is-success", "is-warning", "is-error", "is-info", "is-mono"] }, "example": "<span class=\"cf-tag is-success\">Confirmed</span>" },
+    { "name": "chip", "class": "cf-chip", "section": "10", "purpose": "Inline-editable labelled field in a page header.", "example": "<span class=\"cf-chip\">Client <input value=\"Acme Corp\" aria-label=\"Client\"></span>" },
+    { "name": "dot", "class": "cf-dot", "section": "10", "purpose": "Trust/series marker, always next to a label.", "modifiers": { "tone": ["is-confirmed", "is-estimate", "is-unknown", "is-value"] }, "example": "<span class=\"cf-legend\"><span class=\"cf-dot is-confirmed\"></span>Confirmed</span>" },
+    {
+      "name": "app-shell", "class": "cf-app", "section": "11",
+      "purpose": "Header + left panel + canvas + right inspector. Start from starter.html.",
+      "children": ["cf-header (cf-header-start · cf-header-center · cf-header-end)", "cf-body (cf-panel.is-left · cf-canvas > cf-canvas-inner · cf-panel.is-right)"],
+      "modifiers": { "body": ["no-right", "left-collapsed"] }
+    },
+    {
+      "name": "region", "class": "cf-head", "section": "12",
+      "purpose": "Shared anatomy for panel, section, card, popover, modal and page: head · content/scroll · foot. No component has its own header.",
+      "children": ["cf-head-text > cf-head-e · cf-head-t · cf-head-s", "cf-content", "cf-scroll", "cf-foot (.is-actions)"],
+      "modifiers": { "size": ["(heading-01)", "is-md", "is-lg", "is-xl"], "bar": ["is-bar"] },
+      "example": "<div class=\"cf-head is-md is-bar\"><div class=\"cf-head-text\"><h3 class=\"cf-head-t\">Value drivers</h3><p class=\"cf-head-s\">Each driver multiplies its inputs.</p></div></div>"
+    },
+    {
+      "name": "kpi", "class": "cf-kpi", "section": "12b",
+      "purpose": "The only headline figure.",
+      "children": ["cf-kpi-l", "cf-kpi-v", "cf-kpi-s", "cf-meter (optional)"],
+      "group": { "class": "cf-kpis", "modifiers": ["is-row"] },
+      "example": "<div class=\"cf-kpi\"><div class=\"cf-kpi-l\">Payback</div><div class=\"cf-kpi-v\">7 months</div></div>"
+    },
+    { "name": "meter", "class": "cf-meter", "section": "12b", "purpose": "Proportion bar (trust split).", "example": "<div class=\"cf-meter\" role=\"img\" aria-label=\"70% confirmed\"><i class=\"is-confirmed\" style=\"width:70%\"></i></div>" },
+    {
+      "name": "card", "class": "cf-card", "section": "13",
+      "purpose": "The only container.",
+      "modifiers": { "density": ["is-sm"], "style": ["is-dashed", "is-interactive", "is-selected", "is-canvas"] },
+      "example": "<div class=\"cf-card\"><div class=\"cf-head is-md is-bar\"><h3 class=\"cf-head-t\">Costs</h3></div><div class=\"cf-content\">…</div></div>"
+    },
+    { "name": "empty", "class": "cf-empty", "section": "13", "purpose": "Empty or hidden state inside a card.", "example": "<div class=\"cf-card is-dashed\"><div class=\"cf-empty\"><span class=\"cf-h4\">Costs hidden</span><span>Turn off client safe mode to edit costs.</span></div></div>" },
+    { "name": "skeleton", "class": "cf-skel", "section": "13", "purpose": "Loading placeholder line." },
+    {
+      "name": "resize", "class": "cf-resize", "section": "13b",
+      "purpose": "The only resize handle. Corner .is-se (visible, focusable), edges .is-e / .is-s (hover line). Behaviour in cf-resize.js.",
+      "host": "[data-cf-resizable=\"both|x|y\"] with optional data-min-w/-h, data-max-w/-h, data-snap; child [data-cf-resize-target] is sized instead of the host.",
+      "events": ["cf-resize", "cf-resizeend"],
+      "example": "<div class=\"cf-card\" data-cf-resizable=\"both\" data-min-w=\"240\" data-min-h=\"120\">…<span class=\"cf-resize is-e\" aria-hidden=\"true\"></span><span class=\"cf-resize is-s\" aria-hidden=\"true\"></span><button type=\"button\" class=\"cf-resize is-se\" aria-label=\"Resize\"></button></div>"
+    },
+    {
+      "name": "table", "class": "cf-table", "section": "14",
+      "purpose": "Many records with the same fields. Wrap in .cf-table-wrap inside a card.",
+      "modifiers": { "density": ["is-compact"], "editing": ["is-editable (cells are .cf-edit)"] },
+      "example": "<div class=\"cf-table-wrap\"><table class=\"cf-table\"><thead><tr><th>Driver</th><th class=\"is-num\">Value / yr</th></tr></thead><tbody><tr><td>Time saved</td><td class=\"is-num\">€420,000</td></tr></tbody></table></div>"
+    },
+    { "name": "menu", "class": "cf-menu", "section": "15", "purpose": "Action list from a menu button.", "children": ["cf-menu-group", "cf-menu-item (.is-danger, kbd)", "cf-menu-sep"], "example": "<div class=\"cf-menu\" role=\"menu\"><button type=\"button\" class=\"cf-menu-item\" role=\"menuitem\"><svg><use href=\"#icon--add\"/></svg>New</button></div>" },
+    { "name": "popover", "class": "cf-popover", "section": "15", "purpose": "Floating panel with region anatomy.", "children": ["cf-head.is-bar", "cf-scroll > cf-list-item", "cf-foot"] },
+    { "name": "tooltip", "class": "cf-tooltip", "section": "15", "purpose": "Short helper text on hover/focus." },
+    {
+      "name": "modal", "class": "cf-modal", "section": "16",
+      "purpose": "Blocking decision. Inside .cf-scrim with role=dialog aria-modal.",
+      "modifiers": { "size": ["is-lg"] },
+      "children": ["cf-head.is-lg", "cf-content", "cf-foot.is-actions"]
+    },
+    {
+      "name": "inline-notification", "class": "cf-inline", "section": "17",
+      "purpose": "Persistent in-page feedback. Square (radius 0), 3px status edge.",
+      "modifiers": { "tone": ["is-info", "is-success", "is-warning", "is-error"] },
+      "example": "<div class=\"cf-inline is-warning\"><svg><use href=\"#icon--warning--filled\"/></svg><div class=\"cf-inline-body\"><b>Sample data.</b> Start blank to build your own case.</div></div>"
+    },
+    {
+      "name": "toast", "class": "cf-toast", "section": "17",
+      "purpose": "Temporary feedback after an action. Inverse layer, 3px status edge, square left, 2px radius on the right only. Place in .cf-toast-region.",
+      "modifiers": { "tone": ["(success)", "is-error", "is-warning", "is-info"] },
+      "children": ["svg (status icon)", "cf-toast-body > cf-toast-t · cf-toast-s · cf-toast-c", "cf-btn.is-ghost.is-icon (close)"],
+      "example": "<div class=\"cf-toast\" role=\"status\"><svg aria-hidden=\"true\"><use href=\"#icon--checkmark--filled\"/></svg><div class=\"cf-toast-body\"><span class=\"cf-toast-t\">Version saved</span></div><button type=\"button\" class=\"cf-btn is-ghost is-icon\" aria-label=\"Close\"><svg><use href=\"#icon--close\"/></svg></button></div>"
+    },
+    {
+      "name": "icon", "class": "cf-icon", "section": "5",
+      "purpose": "Carbon icon from the sprite. 16 default, is-lg 20.",
+      "example": "<svg class=\"cf-icon\" aria-hidden=\"true\"><use href=\"#icon--add\"/></svg>"
+    }
+  ],
+  "utilities": ["cf-display", "cf-h1", "cf-h2", "cf-h3", "cf-h4", "cf-lead", "cf-label", "cf-helper", "cf-code", "cf-num", "cf-sr", "cf-row", "cf-stack", "cf-spacer", "cf-grid", "cf-col-12", "cf-col-8", "cf-col-6", "cf-col-4", "cf-col-3", "cf-section", "cf-legend", "cf-list-item", "cf-acts", "cf-error-text", "cf-vsep", "cf-brand", "cf-resizable", "cf-chev", "cf-scrim", "cf-toast-region"],
+  "decisionTable": [
+    ["Trigger an action", "button"],
+    ["Navigate", "link"],
+    ["Pick one of 2–4 views or values", "segmented"],
+    ["Binary setting", "toggle"],
+    ["Multiple independent options", "checkbox"],
+    ["Show one headline figure", "kpi"],
+    ["Read or edit one object's fields", "props"],
+    ["Read or edit many records", "table"],
+    ["Rename in place", "edit (is-title / is-title-sm)"],
+    ["Form in a modal or settings page", "field"],
+    ["Read-only status", "tag"],
+    ["Persistent feedback in the page", "inline-notification"],
+    ["Temporary feedback after an action", "toast"],
+    ["Blocking decision", "modal"],
+    ["Resize a card or text area", "resize"],
+    ["Group content", "card"]
+  ]
+}

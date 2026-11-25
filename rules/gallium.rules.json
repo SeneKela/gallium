@@ -1,0 +1,26 @@
+{
+  "$schema": "./gallium.rules.schema.json",
+  "name": "Gallium",
+  "version": "3.1.0",
+  "prefix": "cf-",
+  "rules": [
+    { "id": "one-height", "level": "error", "text": "Every button, input, select, segmented control and stepper on one row uses the same height token. Default 32px (--cf-h-sm)." },
+    { "id": "radius", "level": "error", "text": "Only radius tokens: --cf-r-xs 2, --cf-r-control 4, --cf-r-container 8, --cf-r-pill. Nested radius = outer − padding. Literal px radii are not allowed.",
+      "exceptions": { "inline-notification": "0 (Carbon-square)", "feedback-card": "0 (Carbon-square)", "toast": "0 left, --cf-r-toast (2px) on the right corners only" } },
+    { "id": "carbon-colour", "level": "error", "text": "Colours come only from semantic --cf- tokens. No hex, rgb() or hsl() in app or component CSS. Primitives (--cf-gray-*, --cf-blue-*, …) are for tokens only." },
+    { "id": "flat-at-rest", "level": "warn", "text": "No shadow at rest. --cf-elev-* only on menu, popover, modal, toast and hovered/selected canvas cards." },
+    { "id": "one-focus-ring", "level": "error", "text": "Do not restyle focus. The base layer draws 2px --cf-focus; flush containers set --cf-focus-offset:-2px." },
+    { "id": "one-job-one-component", "level": "error", "text": "Use the existing component for each job (see components.json). Do not add a class that duplicates one: figures are .cf-kpi, key/values are .cf-prop, in-place edits are .cf-edit, resizing is .cf-resize + cf-resize.js." },
+    { "id": "numbers", "level": "warn", "text": "Numbers use IBM Plex Sans tabular figures (.cf-num / .is-num): right-aligned in table columns, left in property lists. Mono only for code, formulas, identifiers." },
+    { "id": "button-hierarchy", "level": "error", "text": "Kinds: primary, is-secondary, is-tertiary, is-ghost; tone is-danger. At most one primary per .cf-btn-set or header. Labels are verbs in sentence case inside <span>." },
+    { "id": "split-button-hugs", "level": "error", "text": ".cf-btn.is-split hugs its content. Never set a width on it; the chevron area matches a trailing icon (16px icon, 4px tighter padding)." },
+    { "id": "action-vs-navigation", "level": "error", "text": "Actions are <button class=\"cf-btn\">. Navigation is <a class=\"cf-link\"> or an <a class=\"cf-btn\"> with href." },
+    { "id": "carbon-icons-only", "level": "error", "text": "Icons come only from @carbon/icons via the sprite: <svg><use href=\"#icon--name\"/></svg> or cfIcon('name'). Every referenced icon must exist in the sprite (run npm run icons)." },
+    { "id": "icon-a11y", "level": "error", "text": "Icon-only buttons need aria-label. Decorative icons get aria-hidden=\"true\"." },
+    { "id": "state-from-aria", "level": "warn", "text": "State comes from the browser or ARIA (aria-pressed, aria-expanded, aria-busy, disabled), never from a state class. data-cf-state is for specimens only." },
+    { "id": "themes", "level": "error", "text": "Set the theme with data-cf-theme=\"white|g100\" on .cf. Never hard-code a dark mode." }
+  ],
+  "allowedRadii": ["0", "50%", "var(--cf-r-xs)", "var(--cf-r-control)", "var(--cf-r-container)", "var(--cf-r-pill)", "var(--cf-r-toast)"],
+  "iconSprite": "#icon--",
+  "exemptSelectors": [".ds-dont"]
+}

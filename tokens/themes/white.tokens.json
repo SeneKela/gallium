@@ -1,0 +1,371 @@
+{
+  "$description": "Gallium semantic tokens · Carbon white theme",
+  "$extensions": {
+    "com.ibm.gallium": {
+      "colorScheme": "light"
+    }
+  },
+  "semantic": {
+    "canvas": {
+      "$type": "color",
+      "$value": "{color.gray.10}"
+    },
+    "layer-01": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "layer-02": {
+      "$type": "color",
+      "$value": "{color.gray.10}"
+    },
+    "layer-float": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "field": {
+      "$type": "color",
+      "$value": "{color.gray.10}"
+    },
+    "field-hover": {
+      "$type": "color",
+      "$value": "{color.gray.10-hover}"
+    },
+    "hover": {
+      "$type": "color",
+      "$value": "rgba(141,141,141,.12)",
+      "$description": "background-hover"
+    },
+    "pressed": {
+      "$type": "color",
+      "$value": "rgba(141,141,141,.5)",
+      "$description": "background-active"
+    },
+    "selected-bg": {
+      "$type": "color",
+      "$value": "rgba(141,141,141,.2)",
+      "$description": "background-selected"
+    },
+    "overlay": {
+      "$type": "color",
+      "$value": "rgba(22,22,22,.5)"
+    },
+    "inverse": {
+      "$type": "color",
+      "$value": "{color.gray.80}"
+    },
+    "inverse-hover": {
+      "$type": "color",
+      "$value": "{color.gray.80-hover}"
+    },
+    "on-inverse": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "seg-track": {
+      "$type": "color",
+      "$value": "{color.gray.10}"
+    },
+    "seg-thumb": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "border-subtle": {
+      "$type": "color",
+      "$value": "{color.gray.20}"
+    },
+    "border-control": {
+      "$type": "color",
+      "$value": "{color.gray.30}"
+    },
+    "border-strong": {
+      "$type": "color",
+      "$value": "{color.gray.50}"
+    },
+    "text-primary": {
+      "$type": "color",
+      "$value": "{color.gray.100}"
+    },
+    "text-secondary": {
+      "$type": "color",
+      "$value": "{color.gray.70}"
+    },
+    "text-helper": {
+      "$type": "color",
+      "$value": "{color.gray.60}"
+    },
+    "text-disabled": {
+      "$type": "color",
+      "$value": "rgba(22,22,22,.25)",
+      "$description": "text-disabled"
+    },
+    "text-on-color-disabled": {
+      "$type": "color",
+      "$value": "{color.gray.50}"
+    },
+    "text-inverse": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "text-on-color": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "link": {
+      "$type": "color",
+      "$value": "{color.blue.60}"
+    },
+    "link-hover": {
+      "$type": "color",
+      "$value": "{color.blue.70}"
+    },
+    "primary": {
+      "$type": "color",
+      "$value": "{color.blue.60}"
+    },
+    "primary-hover": {
+      "$type": "color",
+      "$value": "{color.blue.60-hover}"
+    },
+    "primary-active": {
+      "$type": "color",
+      "$value": "{color.blue.80}"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{color.gray.80}"
+    },
+    "secondary-hover": {
+      "$type": "color",
+      "$value": "{color.gray.80-hover}"
+    },
+    "secondary-active": {
+      "$type": "color",
+      "$value": "{color.gray.60}"
+    },
+    "tertiary": {
+      "$type": "color",
+      "$value": "{color.blue.60}"
+    },
+    "tertiary-hover": {
+      "$type": "color",
+      "$value": "{color.blue.60-hover}"
+    },
+    "tertiary-active": {
+      "$type": "color",
+      "$value": "{color.blue.80}"
+    },
+    "tertiary-on-hover": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "danger": {
+      "$type": "color",
+      "$value": "{color.red.60}"
+    },
+    "danger-hover": {
+      "$type": "color",
+      "$value": "{color.red.60-hover}"
+    },
+    "danger-active": {
+      "$type": "color",
+      "$value": "{color.red.80}"
+    },
+    "danger-secondary": {
+      "$type": "color",
+      "$value": "{color.red.60}",
+      "$description": "button-danger-secondary: danger tertiary & ghost text"
+    },
+    "disabled": {
+      "$type": "color",
+      "$value": "{color.gray.30}",
+      "$description": "button-disabled"
+    },
+    "selected": {
+      "$type": "color",
+      "$value": "{color.blue.10}"
+    },
+    "focus": {
+      "$type": "color",
+      "$value": "{color.blue.60}"
+    },
+    "focus-inset": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "toggle-off": {
+      "$type": "color",
+      "$value": "{color.gray.50}"
+    },
+    "border-inverse": {
+      "$type": "color",
+      "$value": "{color.gray.100}"
+    },
+    "tag-gray-bg": {
+      "$type": "color",
+      "$value": "{color.gray.20}"
+    },
+    "tag-gray-fg": {
+      "$type": "color",
+      "$value": "{color.gray.100}"
+    },
+    "tag-green-bg": {
+      "$type": "color",
+      "$value": "{color.green.20}"
+    },
+    "tag-green-fg": {
+      "$type": "color",
+      "$value": "{color.green.70}"
+    },
+    "tag-red-bg": {
+      "$type": "color",
+      "$value": "{color.red.20}"
+    },
+    "tag-red-fg": {
+      "$type": "color",
+      "$value": "{color.red.70}"
+    },
+    "tag-blue-bg": {
+      "$type": "color",
+      "$value": "{color.blue.20}"
+    },
+    "tag-blue-fg": {
+      "$type": "color",
+      "$value": "{color.blue.80}"
+    },
+    "success": {
+      "$type": "color",
+      "$value": "{color.green.50}"
+    },
+    "success-soft": {
+      "$type": "color",
+      "$value": "{color.green.10}"
+    },
+    "success-ink": {
+      "$type": "color",
+      "$value": "{color.green.70}"
+    },
+    "warning": {
+      "$type": "color",
+      "$value": "{color.yellow.30}"
+    },
+    "warning-soft": {
+      "$type": "color",
+      "$value": "{color.yellow.10}"
+    },
+    "warning-ink": {
+      "$type": "color",
+      "$value": "{color.yellow.70}"
+    },
+    "warning-icon": {
+      "$type": "color",
+      "$value": "{color.yellow.60}"
+    },
+    "error": {
+      "$type": "color",
+      "$value": "{color.red.60}"
+    },
+    "error-soft": {
+      "$type": "color",
+      "$value": "{color.red.10}"
+    },
+    "error-ink": {
+      "$type": "color",
+      "$value": "{color.red.60}"
+    },
+    "info": {
+      "$type": "color",
+      "$value": "{color.blue.70}"
+    },
+    "info-soft": {
+      "$type": "color",
+      "$value": "{color.blue.10}"
+    },
+    "toast-success": {
+      "$type": "color",
+      "$value": "{color.green.40}"
+    },
+    "toast-error": {
+      "$type": "color",
+      "$value": "{color.red.50}"
+    },
+    "toast-warning": {
+      "$type": "color",
+      "$value": "{color.yellow.30}"
+    },
+    "toast-info": {
+      "$type": "color",
+      "$value": "{color.blue.50}"
+    },
+    "trust-confirmed": {
+      "$type": "color",
+      "$value": "{color.green.50}"
+    },
+    "trust-estimate": {
+      "$type": "color",
+      "$value": "{color.yellow.30}"
+    },
+    "trust-estimate-ring": {
+      "$type": "color",
+      "$value": "{color.yellow.60}"
+    },
+    "trust-unknown": {
+      "$type": "color",
+      "$value": "{color.gray.50}"
+    },
+    "viz-value": {
+      "$type": "color",
+      "$value": "{color.blue.60}"
+    },
+    "viz-cost": {
+      "$type": "color",
+      "$value": "{color.red.60}"
+    },
+    "viz-1": {
+      "$type": "color",
+      "$value": "{color.purple.60}"
+    },
+    "viz-2": {
+      "$type": "color",
+      "$value": "{color.cyan.50}"
+    },
+    "viz-3": {
+      "$type": "color",
+      "$value": "{color.teal.60}"
+    },
+    "viz-4": {
+      "$type": "color",
+      "$value": "{color.magenta.70}"
+    },
+    "icon-on-color": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "$description": "icons/knobs on coloured fills (toggle handle); same in every theme"
+    }
+  },
+  "size": {
+    "icon": {
+      "primary": {
+        "$type": "color",
+        "$value": "{color.gray.100}"
+      }
+    }
+  },
+  "shadow": {
+    "1": {
+      "$type": "shadow",
+      "$value": "0 1px 2px rgba(0,0,0,.08),0 0 0 .5px rgba(0,0,0,.04)"
+    },
+    "2": {
+      "$type": "shadow",
+      "$value": "0 1px 3px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.12)"
+    },
+    "3": {
+      "$type": "shadow",
+      "$value": "0 2px 6px rgba(0,0,0,.08),0 24px 48px rgba(0,0,0,.20)"
+    },
+    "toast": {
+      "$type": "shadow",
+      "$value": "0 2px 6px rgba(0,0,0,.2)"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+name: Gallium · check and deploy
+on:
+  push: { branches: [main] }
+  pull_request:
+permissions: { contents: read, pages: write, id-token: write }
+concurrency: { group: pages-${{ github.ref }}, cancel-in-progress: true }
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm run check            # tokens in sync · lint · inline script copies
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install playwright && python -m playwright install --with-deps chromium
+      - run: npm run smoke            # browser: JS errors, a11y names, icons, shape rules
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: screenshots, path: screenshots }
+      - run: npm run build
+        env: { GALLIUM_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}" }
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main'
+        with: { path: dist }
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: check
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4

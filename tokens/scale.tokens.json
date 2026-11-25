@@ -1,0 +1,248 @@
+{
+  "spacing": {
+    "10": {
+      "$type": "dimension",
+      "$value": "64px"
+    },
+    "01": {
+      "$type": "dimension",
+      "$value": "2px"
+    },
+    "02": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "03": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "04": {
+      "$type": "dimension",
+      "$value": "12px"
+    },
+    "05": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "06": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "07": {
+      "$type": "dimension",
+      "$value": "32px"
+    },
+    "08": {
+      "$type": "dimension",
+      "$value": "40px"
+    },
+    "09": {
+      "$type": "dimension",
+      "$value": "48px"
+    }
+  },
+  "semantic": {
+    "inset": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "inset-sm": {
+      "$type": "dimension",
+      "$value": "12px",
+      "$description": "container / dense-list horizontal padding"
+    },
+    "prop-label": {
+      "$type": "string",
+      "$value": "minmax(96px,45%)"
+    },
+    "panel-left": {
+      "$type": "string",
+      "$value": "clamp(208px,18vw,248px)"
+    },
+    "panel-right": {
+      "$type": "string",
+      "$value": "clamp(248px,22vw,300px)"
+    },
+    "content-max": {
+      "$type": "string",
+      "$value": "1440px"
+    },
+    "font": {
+      "$type": "fontFamily",
+      "$value": "'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif"
+    },
+    "mono": {
+      "$type": "fontFamily",
+      "$value": "'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace"
+    },
+    "ls-12": {
+      "$type": "dimension",
+      "$value": ".32px"
+    },
+    "ls-14": {
+      "$type": "dimension",
+      "$value": ".16px"
+    },
+    "print-surface": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "$description": "page background when printing, whatever the theme"
+    }
+  },
+  "radius": {
+    "xs": {
+      "$type": "dimension",
+      "$value": "2px"
+    },
+    "control": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "container": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "pill": {
+      "$type": "dimension",
+      "$value": "999px"
+    },
+    "toast": {
+      "$type": "dimension",
+      "$value": "{radius.xs}"
+    }
+  },
+  "size": {
+    "control": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "32px"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "40px"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "48px"
+      }
+    },
+    "icon": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "20px"
+      }
+    }
+  },
+  "typography": {
+    "label": {
+      "$type": "typography",
+      "$value": "400 12px/16px {semantic.font}"
+    },
+    "label-strong": {
+      "$type": "typography",
+      "$value": "600 12px/16px {semantic.font}"
+    },
+    "body": {
+      "$type": "typography",
+      "$value": "400 14px/20px {semantic.font}"
+    },
+    "body-compact": {
+      "$type": "typography",
+      "$value": "400 14px/18px {semantic.font}"
+    },
+    "control": {
+      "$type": "typography",
+      "$value": "500 14px/18px {semantic.font}"
+    },
+    "control-xs": {
+      "$type": "typography",
+      "$value": "500 12px/16px {semantic.font}"
+    },
+    "heading-01": {
+      "$type": "typography",
+      "$value": "600 14px/18px {semantic.font}"
+    },
+    "heading-02": {
+      "$type": "typography",
+      "$value": "600 16px/22px {semantic.font}"
+    },
+    "heading-03": {
+      "$type": "typography",
+      "$value": "400 20px/28px {semantic.font}"
+    },
+    "heading-04": {
+      "$type": "typography",
+      "$value": "300 clamp(1.375rem,1.1rem + .9vw,1.75rem)/1.25 {semantic.font}"
+    },
+    "heading-05": {
+      "$type": "typography",
+      "$value": "300 clamp(1.75rem,1.4rem + 1.2vw,2.25rem)/1.2 {semantic.font}"
+    },
+    "code": {
+      "$type": "typography",
+      "$value": "400 12px/16px {semantic.mono}"
+    }
+  },
+  "duration": {
+    "fast-01": {
+      "$type": "duration",
+      "$value": "70ms"
+    },
+    "fast-02": {
+      "$type": "duration",
+      "$value": "110ms"
+    },
+    "moderate-01": {
+      "$type": "duration",
+      "$value": "150ms"
+    },
+    "moderate-02": {
+      "$type": "duration",
+      "$value": "240ms"
+    }
+  },
+  "easing": {
+    "standard": {
+      "$type": "cubicBezier",
+      "$value": "cubic-bezier(.2,0,.38,.9)"
+    },
+    "entrance": {
+      "$type": "cubicBezier",
+      "$value": "cubic-bezier(0,0,.38,.9)"
+    },
+    "float": {
+      "$type": "cubicBezier",
+      "$value": "cubic-bezier(.16,1,.3,1)"
+    },
+    "exit": {
+      "$type": "cubicBezier",
+      "$value": "cubic-bezier(.2,0,1,.9)"
+    }
+  },
+  "z": {
+    "header": {
+      "$type": "number",
+      "$value": "40"
+    },
+    "float": {
+      "$type": "number",
+      "$value": "60"
+    },
+    "modal": {
+      "$type": "number",
+      "$value": "200"
+    },
+    "toast": {
+      "$type": "number",
+      "$value": "300"
+    }
+  }
+}

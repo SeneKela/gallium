@@ -1,0 +1,38 @@
+{
+  "name": "gallium-kit",
+  "version": "3.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "icons": "node icons/build-icons.mjs",
+    "icons:all": "node icons/build-icons.mjs --all --no-inline",
+    "icons:20": "node icons/build-icons.mjs --size 20",
+    "tokens": "node scripts/build-tokens.mjs",
+    "tokens:check": "node scripts/build-tokens.mjs --check",
+    "lint": "node scripts/lint-rules.mjs",
+    "build": "node scripts/build-site.mjs",
+    "build:check": "node scripts/build-site.mjs --check",
+    "check": "npm run tokens:check && npm run lint && npm run build:check",
+    "smoke": "python3 scripts/smoke.py",
+    "mcp": "node scripts/mcp-server.mjs",
+    "publish": "bash scripts/publish-gh-pages.sh",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@carbon/icons": "^11.0.0"
+  },
+  "description": "Gallium: IBM Carbon colour, type and icons with Figma density. Agent-ready (AGENTS.md, llms.txt, MCP).",
+  "devDependencies": {
+    "storybook": "^10.6.9",
+    "@storybook/html-vite": "^10.6.9",
+    "@chromatic-com/storybook": "latest",
+    "@storybook/addon-vitest": "^10.6.9",
+    "@storybook/addon-a11y": "^10.6.9",
+    "@storybook/addon-docs": "^10.6.9",
+    "vitest": "latest",
+    "@vitest/browser-playwright": "latest",
+    "@vitest/coverage-v8": "latest",
+    "playwright": "latest"
+  }
+}

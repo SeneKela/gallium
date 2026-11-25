@@ -1,0 +1,207 @@
+{
+  "$description": "Gallium primitives · IBM palette. Only tokens may reference these.",
+  "color": {
+    "white": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "gray": {
+      "10": {
+        "$type": "color",
+        "$value": "#f4f4f4"
+      },
+      "20": {
+        "$type": "color",
+        "$value": "#e0e0e0"
+      },
+      "30": {
+        "$type": "color",
+        "$value": "#c6c6c6"
+      },
+      "40": {
+        "$type": "color",
+        "$value": "#a8a8a8"
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#8d8d8d"
+      },
+      "60": {
+        "$type": "color",
+        "$value": "#6f6f6f"
+      },
+      "70": {
+        "$type": "color",
+        "$value": "#525252"
+      },
+      "80": {
+        "$type": "color",
+        "$value": "#393939"
+      },
+      "90": {
+        "$type": "color",
+        "$value": "#262626"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#161616"
+      },
+      "10-hover": {
+        "$type": "color",
+        "$value": "#e8e8e8"
+      },
+      "60-hover": {
+        "$type": "color",
+        "$value": "#5e5e5e"
+      },
+      "80-hover": {
+        "$type": "color",
+        "$value": "#474747"
+      }
+    },
+    "blue": {
+      "10": {
+        "$type": "color",
+        "$value": "#edf5ff"
+      },
+      "20": {
+        "$type": "color",
+        "$value": "#d0e2ff"
+      },
+      "30": {
+        "$type": "color",
+        "$value": "#a6c8ff"
+      },
+      "40": {
+        "$type": "color",
+        "$value": "#78a9ff"
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#4589ff"
+      },
+      "60": {
+        "$type": "color",
+        "$value": "#0f62fe"
+      },
+      "70": {
+        "$type": "color",
+        "$value": "#0043ce"
+      },
+      "80": {
+        "$type": "color",
+        "$value": "#002d9c"
+      },
+      "60-hover": {
+        "$type": "color",
+        "$value": "#0050e6"
+      }
+    },
+    "red": {
+      "10": {
+        "$type": "color",
+        "$value": "#fff1f1"
+      },
+      "20": {
+        "$type": "color",
+        "$value": "#ffd7d9"
+      },
+      "40": {
+        "$type": "color",
+        "$value": "#ff8389"
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#fa4d56"
+      },
+      "60": {
+        "$type": "color",
+        "$value": "#da1e28"
+      },
+      "70": {
+        "$type": "color",
+        "$value": "#a2191f"
+      },
+      "80": {
+        "$type": "color",
+        "$value": "#750e13"
+      },
+      "60-hover": {
+        "$type": "color",
+        "$value": "#b81921"
+      }
+    },
+    "green": {
+      "10": {
+        "$type": "color",
+        "$value": "#defbe6"
+      },
+      "20": {
+        "$type": "color",
+        "$value": "#a7f0ba"
+      },
+      "30": {
+        "$type": "color",
+        "$value": "#6fdc8c"
+      },
+      "40": {
+        "$type": "color",
+        "$value": "#42be65"
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#24a148"
+      },
+      "70": {
+        "$type": "color",
+        "$value": "#0e6027"
+      },
+      "80": {
+        "$type": "color",
+        "$value": "#044317"
+      }
+    },
+    "yellow": {
+      "10": {
+        "$type": "color",
+        "$value": "#fcf4d6"
+      },
+      "30": {
+        "$type": "color",
+        "$value": "#f1c21b"
+      },
+      "60": {
+        "$type": "color",
+        "$value": "#8e6a00"
+      },
+      "70": {
+        "$type": "color",
+        "$value": "#684e00"
+      }
+    },
+    "purple": {
+      "60": {
+        "$type": "color",
+        "$value": "#8a3ffc"
+      }
+    },
+    "cyan": {
+      "50": {
+        "$type": "color",
+        "$value": "#1192e8"
+      }
+    },
+    "teal": {
+      "60": {
+        "$type": "color",
+        "$value": "#007d79"
+      }
+    },
+    "magenta": {
+      "70": {
+        "$type": "color",
+        "$value": "#9f1853"
+      }
+    }
+  }
+}
