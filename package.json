@@ -12,6 +12,7 @@
     "lint": "node scripts/lint-rules.mjs",
     "build": "node scripts/build-site.mjs",
     "build:check": "node scripts/build-site.mjs --check",
+    "build:all": "npm run build && storybook build -o dist/storybook",
     "check": "npm run tokens:check && npm run lint && npm run build:check",
     "smoke": "python3 scripts/smoke.py",
     "mcp": "node scripts/mcp-server.mjs",

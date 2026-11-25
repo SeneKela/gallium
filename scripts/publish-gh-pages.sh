@@ -9,7 +9,7 @@ cd "$(dirname "$0")/.."
 npm run -s check
 URL="$(git remote get-url "$REMOTE")"
 [ -d "$URL" ] && URL="$(cd "$URL" && pwd)"   # local path remotes must be absolute
-npm run -s build
+npm run -s build:all
 TMP="$(mktemp -d)"
 cp -R dist/. "$TMP"/
 cd "$TMP"
