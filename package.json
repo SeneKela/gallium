@@ -18,22 +18,25 @@
     "mcp": "node scripts/mcp-server.mjs",
     "publish": "bash scripts/publish-gh-pages.sh",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --build-script-name=build-storybook"
   },
   "dependencies": {
     "@carbon/icons": "^11.0.0"
   },
   "description": "Gallium: IBM Carbon colour, type and icons with Figma density. Agent-ready (AGENTS.md, llms.txt, MCP).",
   "devDependencies": {
-    "storybook": "^10.6.9",
-    "@storybook/html-vite": "^10.6.9",
     "@chromatic-com/storybook": "latest",
-    "@storybook/addon-vitest": "^10.6.9",
     "@storybook/addon-a11y": "^10.6.9",
     "@storybook/addon-docs": "^10.6.9",
-    "vitest": "latest",
+    "@storybook/addon-mcp": "^10.6.9",
+    "@storybook/addon-vitest": "^10.6.9",
+    "@storybook/html-vite": "^10.6.9",
     "@vitest/browser-playwright": "latest",
     "@vitest/coverage-v8": "latest",
-    "playwright": "latest"
+    "chromatic": "^18.15.3",
+    "playwright": "latest",
+    "storybook": "^10.6.9",
+    "vitest": "latest"
   }
 }

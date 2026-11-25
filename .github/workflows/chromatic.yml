@@ -1,0 +1,19 @@
+name: Gallium · publish Storybook to Chromatic
+on:
+  push: { branches: [main] }
+  pull_request:
+concurrency: { group: chromatic-${{ github.ref }}, cancel-in-progress: true }
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }        # Chromatic needs full history to find baselines
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm ci
+      - run: npm run check              # never publish a Storybook built from stale tokens or failing lint
+      # Visual changes are reviewed in Chromatic, not as CI failures. main is the accepted baseline.
+      - run: npm run chromatic -- --exit-zero-on-changes --auto-accept-changes main
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

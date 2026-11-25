@@ -27,6 +27,7 @@ npm run smoke      # Chromium, white + g100: JS errors, accessible names, icons,
 npm run build      # dist/ = site + llms.txt, llms-full.txt, components/*.md, tokens.json
 npm run publish    # build and push dist/ to the gh-pages branch (when Actions isn't available)
 npm run mcp        # MCP server on stdio
+npm run chromatic  # build Storybook and publish it to Chromatic (needs CHROMATIC_PROJECT_TOKEN)
 ```
 `npm run smoke` needs `pip install playwright && python -m playwright install chromium`. Everything else needs Node 18 or later and has no dependencies.
 
@@ -38,6 +39,14 @@ Edit `tokens/…json`, run `npm run tokens`, then commit both files. CI fails if
 - **No Actions (some GitHub Enterprise orgs):** run `npm run publish`. Then go to Settings › Pages › Source, select **Deploy from a branch**, and choose `gh-pages` with the `/ (root)` folder.
 
 The site serves `/llms.txt`, `/llms-full.txt`, `/components/*.md`, `/components.json`, `/tokens.json`, `/AGENTS.md` and `/rules/`.
+
+### Publishing Storybook to Chromatic
+Chromatic hosts the published Storybook, so agents, tools and CI all read the same UI context. Every build comes from a commit that passed `npm run check`.
+1. Create a project at chromatic.com from this repository and copy its project token.
+2. Add the token as the repository secret `CHROMATIC_PROJECT_TOKEN` (Settings › Secrets and variables › Actions).
+3. Push. `.github/workflows/chromatic.yml` publishes every PR and every push to `main`. Changes on `main` are auto-accepted as the baseline. Changes on a PR wait for review in Chromatic.
+
+To publish by hand: `CHROMATIC_PROJECT_TOKEN=<token> npm run chromatic`.
 
 ### Using it with agents
 - **Any agent:** prompt it with *"Build this with the Gallium design system at <site>/llms.txt. Follow AGENTS.md. Done when `npm run lint` reports 0 errors."*
